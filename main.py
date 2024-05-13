@@ -51,7 +51,7 @@ class BinarySearchTree:
                     ans += (self.translateMorse(i))
 
             ans += ' '
-        return ans
+        return ans[:-1]
 
 
     # codigo para traducir de alfabeto a morse
@@ -82,7 +82,7 @@ class BinarySearchTree:
                 ans += '/'
             else:
                 ans += f'{self.morseOfLetter(i)[0]} '
-        return ans
+        return ans[:-1]
 
 
 
@@ -122,13 +122,25 @@ for key, item in codigo_morse.items():
 
 
 
+while True:
+    print("Opciones:")
+    print("1. traducir de morse a alfabeto")
+    print("2. traducir del alfabeto a morse")
+    print("3. traducir una frase de alfabeto a morse")
+    ans = input('eleccion:')
 
+    if(ans == '1'):
 
+        message = input('mensaje:')
+        print('traducción:')
+        print(f'traduccion: "{tree.translateToAlphabet(message)}"\n')
 
+    elif (ans == '2'):
+        message = input('mensaje:')
+        print('traducción:')
+        print(f'traduccion: "{tree.translateToMorse(message)}"\n')
 
-
-
-
-
-print(tree.translateToMorse('hola a todos'))
-print(tree.translateToAlphabet('.--. .- ... . / .-.. --- / --.- ..- . / .--. .- ... . / -- .- .- -. .- '))
+    elif (ans == '3'):
+        message = input('mensaje:')
+        print('traducción:')
+        print(f'traduccion: "{tree.translateToMorse(message)}"\n')
